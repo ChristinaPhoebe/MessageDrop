@@ -1,0 +1,26 @@
+*{
+    background-color: black;
+    color: white;
+}
+.card{
+    margin-top: 15%;
+    margin-left: 33%;
+}
+.grad-text{
+  background: linear-gradient(90deg, #00c6ff, #00ff99);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+button{
+    margin-left: 17%;
+    padding: 15px 25px;
+    border-radius: 12px;
+    border-style: hidden;
+    background: linear-gradient(90deg, #00c6ff, #00ff99);
+    color: black;
+    transition: background 0.4s ease, transform 0.2s ease;
+}
+button:hover{
+  transform: translateY(-5px);
+}

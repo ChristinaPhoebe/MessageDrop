@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anonymous Message Drop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+  <h1><span class="grad-text">Anonymous</span> Message Drop</h1>
+  <p>Say Anything. No Names. No Judgement</p>
+
+  <form id="msgForm">
+    <textarea
+      id="message"
+      rows="4"
+      cols="50"
+      placeholder="Type your message here"
+      required
+    ></textarea>
+    <br><br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="status"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('msgForm');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const message = document.getElementById('message').value;
+
+      const res = await fetch('/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const text = await res.text();
+      status.innerText = text;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
