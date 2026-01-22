@@ -25,6 +25,7 @@
   </div>
 
   <script>
+    const API_BASE= 'https://messagedrop.onrender.com/';
     const form = document.getElementById('msgForm');
     const status = document.getElementById('status');
 
@@ -33,14 +34,13 @@
 
       const message = document.getElementById('message').value;
 
-      const res = await fetch('https://anonymous-drop.onrender.com', {
+      const res = await fetch('https://messagedrop.onrender.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ message })
       });
-
       const text = await res.text();
       status.innerText = text;
       form.reset();
