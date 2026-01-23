@@ -8,15 +8,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 20px;
 }
 .card{
     text-align: center;
-    max-width: 420px;
-    padding: 24px;
-    width: 100%;
-    border-radius: 16px;
 }
 .grad-text{
   background: linear-gradient(90deg, #00c6ff, #00ff99);
@@ -25,7 +19,6 @@ body{
   font-weight: 600;
 }
 button{
-    margin-left: 15%;
     padding: 15px 25px;
     border-radius: 12px;
     border-style: hidden;
